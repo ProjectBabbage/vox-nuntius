@@ -6,8 +6,12 @@
 position = Vector2( 505, 260 )
 
 [node name="Soldier" parent="." instance=ExtResource( 1 )]
-player = "ai"
+team = "player"
 
 [node name="Soldier2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 79, 3 )
-player = "human"
+position = Vector2( 96, -71 )
+team = "ai"
+
+[node name="Soldier3" parent="." instance=ExtResource( 1 )]
+position = Vector2( -100, -82 )
+team = "ai"
