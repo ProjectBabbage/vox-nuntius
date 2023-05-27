@@ -38,7 +38,11 @@ mouse_filter = 2
 texture = ExtResource( 2 )
 stretch_mode = 2
 
+[node name="Soldier2" parent="." instance=ExtResource( 3 )]
+position = Vector2( -325, 123 )
+
 [node name="Soldier" parent="." instance=ExtResource( 3 )]
+position = Vector2( 58, 56 )
 
 [node name="Temple" type="Sprite" parent="."]
 texture = ExtResource( 6 )

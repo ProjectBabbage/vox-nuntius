@@ -5,7 +5,8 @@ export var messageScene: PackedScene
 
 var order: Order
 
-func _process(delta):
+
+func _physics_process(delta):
 	if order:
 		if order.origin.distance_to(position) < 1:
 			var message = messageScene.instance()
@@ -14,4 +15,4 @@ func _process(delta):
 			get_tree().get_root().add_child(message)
 			queue_free()
 		else:
-			move_and_collide(Vector2.move_toward(order.origin, movement_speed * delta))
+			move_and_collide(position.direction_to(order.origin) * movement_speed * delta)

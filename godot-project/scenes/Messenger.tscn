@@ -8,6 +8,8 @@
 radius = 31.0644
 
 [node name="Messenger" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 0
 script = ExtResource( 2 )
 messageScene = ExtResource( 3 )
 

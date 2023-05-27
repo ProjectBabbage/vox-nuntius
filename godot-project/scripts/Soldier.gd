@@ -22,13 +22,8 @@ func _physics_process(delta):
 	if order:
 		if order.target.distance_to(position) < 1:
 			order = null
-			return
-		var collision_info: KinematicCollision2D =  move_and_collide(
-			Vector2.move_toward(order.target, delta * 100)
-		)
-		var collider = collision_info.collider
-		if collider is Message:
-			pickMessage(collider)
+		else:
+			move_and_collide(position.direction_to(order.target) * delta * 100)
 
 
 func pickMessage(message):
@@ -37,12 +32,14 @@ func pickMessage(message):
 
 func _on_CombatArea2D_area_entered(area:Area2D):
 	var parent = area.get_parent()
-	if not (parent is Unit):
-		return
-	var unit : Unit = parent
-	if unit.team != team:
-		units_to_attack.push_back(unit)
-		print("added enemy ", unit)
+	if parent is Unit:
+		if parent.team != team:
+			units_to_attack.push_back(parent)
+			print("added enemy ", parent)
+	elif area is Message:
+		pickMessage(area)
+	else:
+		print("entered ", parent)
 
 func _on_CombatArea2D_area_exited(area:Area2D):
 	var parent = area.get_parent()
