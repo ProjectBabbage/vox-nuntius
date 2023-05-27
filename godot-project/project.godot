@@ -45,7 +45,7 @@ _global_script_class_icons={
 [application]
 
 config/name="vox nuntius"
-run/main_scene="res://scenes/Map.tscn"
+run/main_scene="res://scenes/root.tscn"
 config/icon="res://assets/scroll.png"
 
 [gui]

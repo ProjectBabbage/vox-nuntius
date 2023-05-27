@@ -13,16 +13,17 @@ func _ready():
 
 func _physics_process(delta):
 	if order:
-		move_and_collide(
+		if order.target.distance_to(position) < 1:
+			order = null
+			return
+		var collision_info: KinematicCollision2D =  move_and_collide(
 			Vector2.move_toward(order.target, delta * 100)
 		)
-	else: 		
-		var collision_info: KinematicCollision2D = move_and_collide(velocity * delta)
-		if collision_info:
-			# var collision_point = collision_info.position
-			# print(collision_info.collider.get_script() is Message)
-			var collider = collision_info.collider
-			if collider is Message:
-				order = collider.order
-				collider.queue_free()
+		var collider = collision_info.collider
+		if collider is Message:
+			pickMessage(collider)
 
+
+func pickMessage(message):
+	order = message.order
+	message.queue_free()
