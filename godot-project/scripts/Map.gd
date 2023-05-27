@@ -9,13 +9,10 @@ var currentLine: Line2D
 
 export (PackedScene) var messageScene
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if isWritingPath:
 		currentLine.points[1] = get_global_mouse_position()
