@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Unit
 class_name Soldier, "res://assets/IconPack/Spear.png"
 
 var order: Order

@@ -29,17 +29,23 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/Order.gd"
 }, {
-"base": "KinematicBody2D",
+"base": "Unit",
 "class": "Soldier",
 "language": "GDScript",
 "path": "res://scripts/Soldier.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Unit",
+"language": "GDScript",
+"path": "res://scripts/Unit.gd"
 } ]
 _global_script_class_icons={
 "Health": "",
 "HelloWorld": "",
 "Message": "",
 "Order": "",
-"Soldier": "res://assets/IconPack/Spear.png"
+"Soldier": "res://assets/IconPack/Spear.png",
+"Unit": ""
 }
 
 [application]

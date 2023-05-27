@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/Soldier.tscn" type="PackedScene" id=1]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 505, 260 )
+
+[node name="Soldier" parent="." instance=ExtResource( 1 )]
+player = "ai"
+
+[node name="Soldier2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 79, 3 )
+player = "human"
