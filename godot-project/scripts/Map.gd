@@ -18,6 +18,12 @@ func _ready():
 
 func _on_Area2D_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
-		print(viewport.get_mouse_position())
 		print("click")
+		var position = get_global_mouse_position()
+		var l := Line2D.new()
+		l.default_color = Color(0, 0, 0, 1)
+		l.width = 3
+		l.add_point(Vector2(0, 0))
+		l.add_point(position)
+		add_child(l)
 	pass  # Replace with function body.

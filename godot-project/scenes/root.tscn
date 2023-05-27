@@ -4,21 +4,32 @@
 [ext_resource path="res://scripts/Map.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 30.5, 30.5 )
+extents = Vector2( 318.5, 276 )
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 2, 3 )
+current = true
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 32, 32 )
+position = Vector2( -7, -1 )
 shape = SubResource( 1 )
 
 [node name="TextureRect" type="TextureRect" parent="Area2D"]
-margin_right = 64.0
-margin_bottom = 64.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -321.0
+margin_top = -274.5
+margin_right = 321.0
+margin_bottom = 274.5
 mouse_filter = 2
 texture = ExtResource( 1 )
+stretch_mode = 1
 
 [connection signal="input_event" from="Area2D" to="Area2D" method="_on_Area2D_input_event"]
