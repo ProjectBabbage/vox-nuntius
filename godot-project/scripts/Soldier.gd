@@ -36,13 +36,19 @@ func pickMessage(message):
 	message.queue_free()
 
 func _on_CombatArea2D_area_entered(area:Area2D):
-	var unit : Unit = area.get_parent()
+	var parent = area.get_parent()
+	if not (parent is Unit):
+		return
+	var unit : Unit = parent
 	if unit.team != team:
 		units_to_attack.push_back(unit)
 		print("added enemy ", unit)
 
 func _on_CombatArea2D_area_exited(area:Area2D):
-	var unit : Unit = area.get_parent()
+	var parent = area.get_parent()
+	if not (parent is Unit):
+		return
+	var unit : Unit = parent
 	if unit.team != team:
 		units_to_attack.remove(units_to_attack.find(unit))
 		print("enemy exited ", unit)
