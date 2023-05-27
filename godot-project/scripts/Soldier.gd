@@ -3,15 +3,18 @@ class_name Soldier, "res://assets/IconPack/Spear.png"
 
 var order: Order
 var velocity = Vector2.UP * 15
-var timer: Timer
+onready var life_bar: ProgressBar = $LifeBar
+onready var timer: Timer = $Timer
 
 func _ready():
+	life_bar.value = health.current_health
 	attack_dmg = 6
-	timer = $Timer
 	timer.start(1)
 
 
 func _physics_process(delta):
+	life_bar.value = health.current_health
+
 	if timer.time_left <= 0:
 		attack()
 		timer.start()
