@@ -1,0 +1,3 @@
+[submodule "rust-lib/gdnative"]
+	path = rust-lib/gdnative
+	url = https://github.com/godot-rust/gdnative
