@@ -1,17 +1,14 @@
 extends Area2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 var isWritingPath := false
 var currentLine: Line2D
 
-export (PackedScene) var messageScene
+export var messengerScene: PackedScene
 
 func _ready():
 	pass
 
+const Order = preload("res://scripts/Order.gd")
 
 func _process(delta):
 	if isWritingPath:
@@ -20,16 +17,14 @@ func _process(delta):
 
 func _on_Area2D_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
-		print("click")
 		if isWritingPath:
 			isWritingPath = false
-			currentLine.points[1] = get_global_mouse_position()
-			var message = messageScene.instance()
-			message.position = currentLine.points[0]
-			add_child(message)
-			currentLine.default_color = Color(0, 0, 0, 0.2)
-			message.add_child(currentLine)
-			currentLine = null
+			var end_position = get_global_mouse_position()
+			var messenger = messengerScene.instance()
+			messenger.position = Vector2(0, 0)
+			messenger.order = Order.new(currentLine.points[0], end_position)
+			add_child(messenger)
+			currentLine.queue_free()
 		else:
 			isWritingPath = true
 			currentLine = Line2D.new()
