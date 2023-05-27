@@ -7,10 +7,10 @@ reloadable=true
 
 [entry]
 
-OSX.64="res://mac-rustlib.dylib"
 X11.64="res://librust_lib.so"
+OSX.64="res://mac-rustlib.dylib"
 
 [dependencies]
 
-OSX.64=[  ]
 X11.64=[  ]
+OSX.64=[  ]

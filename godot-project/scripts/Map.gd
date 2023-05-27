@@ -10,8 +10,7 @@ var currentLine: Line2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("hi")
-	pass  # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,4 +35,3 @@ func _on_Area2D_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 			currentLine.add_point(get_global_mouse_position())
 			currentLine.add_point(get_global_mouse_position())
 			add_child(currentLine)
-	pass  # Replace with function body.
