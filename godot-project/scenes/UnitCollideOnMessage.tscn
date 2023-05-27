@@ -7,9 +7,7 @@
 position = Vector2( 484, 363 )
 scale = Vector2( 2, 2 )
 
-[node name="Message" parent="." instance=ExtResource( 2 )]
-position = Vector2( -49.5, -67.5 )
-script = null
-
 [node name="Soldier" parent="." instance=ExtResource( 1 )]
-position = Vector2( -56, -82 )
+
+[node name="Message" parent="." instance=ExtResource( 2 )]
+position = Vector2( 52, 31.5 )

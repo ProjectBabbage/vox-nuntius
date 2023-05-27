@@ -1,4 +1,5 @@
 extends KinematicBody2D
+class_name Message
 
 const Order = preload("res://scripts/Order.gd")
 

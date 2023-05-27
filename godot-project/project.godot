@@ -15,13 +15,25 @@ _global_script_classes=[ {
 "path": "res://how_to/use_rust_scripts/hello_scene.gdns"
 }, {
 "base": "KinematicBody2D",
-"class": "Soldier",
+"class": "Message",
+"language": "GDScript",
+"path": "res://scripts/Message.gd"
+}, {
+"base": "Reference",
+"class": "Order",
+"language": "GDScript",
+"path": "res://scripts/Order.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Unit",
 "language": "GDScript",
 "path": "res://scripts/Unit.gd"
 } ]
 _global_script_class_icons={
 "HelloWorld": "",
-"Soldier": "res://assets/IconPack/Spear.png"
+"Message": "",
+"Order": "",
+"Unit": "res://assets/IconPack/Spear.png"
 }
 
 [application]

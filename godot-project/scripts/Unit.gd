@@ -1,8 +1,9 @@
 extends KinematicBody2D
-class_name Soldier, "res://assets/IconPack/Spear.png"
+class_name Unit, "res://assets/IconPack/Spear.png"
 
-var velocity = Vector2(250, 250)
+var order: Order
 
+var velocity = Vector2.UP * 15
 func _ready():
 	print("ready unit")
 	var kinematic_body := move_and_collide(Vector2.DOWN * 10)
@@ -10,7 +11,18 @@ func _ready():
 
 
 func _physics_process(delta):
-	var collision_info: KinematicCollision2D = move_and_collide(velocity * delta)
-	if collision_info:
-		# var collision_point = collision_info.position
-		print(collision_info.collider.get_script() is Object)
+	if order:
+		print("in order")
+		move_and_collide(
+			Vector2.move_toward(order.target, delta * 100)
+		)
+	else: 		
+		var collision_info: KinematicCollision2D = move_and_collide(velocity * delta)
+		if collision_info:
+			# var collision_point = collision_info.position
+			# print(collision_info.collider.get_script() is Message)
+			var collider = collision_info.collider
+			if collider is Message:
+				order = collider.order
+				collider.queue_free()
+

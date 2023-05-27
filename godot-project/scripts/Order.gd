@@ -1,3 +1,5 @@
+class_name Order
+
 var order
 
 var origin: Vector2

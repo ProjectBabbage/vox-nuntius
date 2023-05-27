@@ -2,7 +2,6 @@
 
 [ext_resource path="res://assets/scroll.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Message.gd" type="Script" id=2]
-[ext_resource path="res://scripts/Unit.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 22.0227
