@@ -18,7 +18,7 @@ cargo build
 
 ### Overview
 
-This is a RTS stategy game. There is a solo campaign played against an AI.
+This is a RTS game. There is a solo campaign played against an AI.
 This game is based on the concept that orders and information take some time to propagate. The player sould take the travel time into account when making strategy decisions.
 
 ![Flow of the game](./images/scroll.svg)
