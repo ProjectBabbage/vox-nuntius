@@ -22,3 +22,10 @@ func _process(delta):
 		position.y -= speed * delta
 	if Input.is_action_pressed("ui_down"):
 		position.y += speed * delta
+
+	if Input.is_action_just_released('wheel_down'):
+		zoom.x += 0.25
+		zoom.y += 0.25
+	if Input.is_action_just_released('wheel_up') and zoom.x > 1 and zoom.y > 1:
+		zoom.x -= 0.25
+		zoom.y -= 0.25
