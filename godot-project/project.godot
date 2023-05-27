@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="vox nuntius"
+run/main_scene="res://scenes/root.tscn"
 config/icon="res://icon.png"
 
 [gui]
