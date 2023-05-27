@@ -25,14 +25,18 @@ This game is based on the concept that orders and information take some time to 
 
 ### Buildings
 
-- Temple: there is only one on the map, in the middle. This building is indestructible. Both the player and the AI can generate new units by sending a Nuntius there.
-- Town Center: your center is your base, has 1000 Health Points, and represent the winning condition of the game. Destroy the ennemy's Taunt center to become the master of Vox Nuntius.
+- Temple: there is only one on the map, in the middle. This building is indestructible. Both the player and the AI can invoke new units by sending a nuntius there. Each player has a number of points available at the start of the game, and can only invoke units in that limit.
+- Town Center: your center is your base, has 1000 Health Points, and represent the winning condition of the game. Destroy the ennemy's Town center to become the master of Vox Nuntius. Alternatively, you also win by eliminating all of your opponent's units.
 
 ![Ressources](./images/ressources.svg)
 
 ### Units
 
-- Nuntius: this unit is responsible to carry order accross the map to your units. Each player has a set number of Nuntius and can lose some to combat action. Once a Nuntius is sent on a mission to carry orders, the player can not control it until the mission is completed. Their movement speed is 2 speed unit.
-- Soldiers: they are your attack unit, they have 100 health points and you can make some spawn by sending a Nuntius to the temple at the center of the map. Their movement speed is 1 speed unit.
+- Nuntius: this unit is responsible to carry order accross the map to your units. Each player has a set number of nuntius and can lose some to combat action. Be careful with your nuntius, they have 100 health points and you won't get more nuntius as the game goes on. Once a nuntius is sent on a mission to carry orders, the player can not control it until the mission is completed. Their movement speed is 2 speed unit.
+- Soldiers: they are your attack unit, they have 100 health points and you can make some spawn by sending a nuntius to the temple at the center of the map. Their movement speed is 1 speed unit and when they are not given orders they attack any unit (choosen at random) among those in range.
 
 ![Units](./images/unit.svg)
+
+### Map
+
+The map has a width of 160 unit wide and a height of 90 units. Apart from the normal terrain, there is also some terrain that is impassable.
