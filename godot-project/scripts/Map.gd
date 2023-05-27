@@ -31,6 +31,7 @@ func _on_Area2D_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 			message.position = currentLine.points[0]
 			add_child(message)
 			currentLine.default_color = Color(0, 0, 0, 0.2)
+			message.add_child(currentLine)
 			currentLine = null
 		else:
 			isWritingPath = true
