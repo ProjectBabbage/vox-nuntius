@@ -1,3 +1,13 @@
 # To build the rust-lib
 
-You need to have rust installed, and do "cargo build" in the rust-lib folder
+In the root folder, run:
+
+``` bash
+git submodule update --init --recursive
+```
+
+Then, with rust installed, run in the rust-lib folder:
+
+``` bash
+cargo build
+```
