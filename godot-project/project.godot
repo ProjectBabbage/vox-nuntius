@@ -22,7 +22,7 @@ _global_script_class_icons={
 
 config/name="vox nuntius"
 run/main_scene="res://scenes/root.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/scroll.png"
 
 [gui]
 

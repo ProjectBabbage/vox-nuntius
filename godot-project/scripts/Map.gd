@@ -7,6 +7,8 @@ extends Area2D
 var isWritingPath := false
 var currentLine: Line2D
 
+export (PackedScene) var messageScene
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,6 +27,10 @@ func _on_Area2D_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 		if isWritingPath:
 			isWritingPath = false
 			currentLine.points[1] = get_global_mouse_position()
+			var message = messageScene.instance()
+			message.position = currentLine.points[0]
+			add_child(message)
+			currentLine.default_color = Color(0, 0, 0, 0.2)
 			currentLine = null
 		else:
 			isWritingPath = true
