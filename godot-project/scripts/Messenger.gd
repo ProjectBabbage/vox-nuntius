@@ -1,17 +1,9 @@
 extends KinematicBody2D
 
-const Order = preload("res://scripts/Order.gd")
-
-
 export var movement_speed: float = 100
 export var messageScene: PackedScene
 
 var order: Order
-
-func _ready():
-	
-	pass
-
 
 func _process(delta):
 	if order:
@@ -23,4 +15,3 @@ func _process(delta):
 			queue_free()
 		else:
 			move_and_collide(Vector2.move_toward(order.origin, movement_speed * delta))
-	pass

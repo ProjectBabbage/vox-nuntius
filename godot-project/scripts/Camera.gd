@@ -1,13 +1,9 @@
 extends Camera2D
 
 export var camera_speed = 1000
-
 export var zoom_speed = 0.4
 export var min_zoom = 5
 export var max_zoom = 0.25
-
-func _ready():
-	pass
 
 
 func _process(delta):

@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Reference",
+"class": "Health",
+"language": "GDScript",
+"path": "res://scripts/Health.gd"
+}, {
 "base": "",
 "class": "HelloWorld",
 "language": "NativeScript",
@@ -25,21 +30,22 @@ _global_script_classes=[ {
 "path": "res://scripts/Order.gd"
 }, {
 "base": "KinematicBody2D",
-"class": "Unit",
+"class": "Soldier",
 "language": "GDScript",
-"path": "res://scripts/Unit.gd"
+"path": "res://scripts/Soldier.gd"
 } ]
 _global_script_class_icons={
+"Health": "",
 "HelloWorld": "",
 "Message": "",
 "Order": "",
-"Unit": "res://assets/IconPack/Spear.png"
+"Soldier": "res://assets/IconPack/Spear.png"
 }
 
 [application]
 
 config/name="vox nuntius"
-run/main_scene="res://scenes/root.tscn"
+run/main_scene="res://scenes/Map.tscn"
 config/icon="res://assets/scroll.png"
 
 [gui]

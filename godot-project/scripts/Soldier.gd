@@ -1,10 +1,11 @@
 extends KinematicBody2D
-class_name Unit, "res://assets/IconPack/Spear.png"
+class_name Soldier, "res://assets/IconPack/Spear.png"
 
 var order: Order
 
 var velocity = Vector2.UP * 15
 func _ready():
+	
 	print("ready unit")
 	var kinematic_body := move_and_collide(Vector2.DOWN * 10)
 	print(kinematic_body)
@@ -12,7 +13,6 @@ func _ready():
 
 func _physics_process(delta):
 	if order:
-		print("in order")
 		move_and_collide(
 			Vector2.move_toward(order.target, delta * 100)
 		)

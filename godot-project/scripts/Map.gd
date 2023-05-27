@@ -10,12 +10,12 @@ func _ready():
 
 const Order = preload("res://scripts/Order.gd")
 
-func _process(delta):
+func _process(_delta):
 	if isWritingPath:
 		currentLine.points[1] = get_global_mouse_position()
 
 
-func _on_Area2D_input_event(viewport: Node, event: InputEvent, shape_idx: int):
+func _on_Area2D_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
 		if isWritingPath:
 			isWritingPath = false
