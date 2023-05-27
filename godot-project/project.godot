@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "HelloWorld",
+"language": "NativeScript",
+"path": "res://how_to/use_rust_scripts/hello_scene.gdns"
+} ]
+_global_script_class_icons={
+"HelloWorld": ""
+}
+
 [application]
 
 config/name="vox nuntius"

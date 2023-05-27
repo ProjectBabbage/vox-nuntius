@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://how_to/use_rust_scripts/hello_scene.gdns" type="Script" id=1]
+
+[node name="HelloWorld" type="Node2D"]
+script = ExtResource( 1 )

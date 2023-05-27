@@ -2,12 +2,12 @@
 
 In the root folder, run:
 
-``` bash
+```bash
 git submodule update --init --recursive
 ```
 
 Then, with rust installed, run in the rust-lib folder:
 
-``` bash
+```bash
 cargo build
 ```
