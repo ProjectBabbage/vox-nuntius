@@ -12,7 +12,6 @@ func _ready():
 	unit.translate(Vector2.RIGHT * 200 + Vector2.DOWN * 100)
 	add_child(unit)
 	add_child(resource.instance())
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

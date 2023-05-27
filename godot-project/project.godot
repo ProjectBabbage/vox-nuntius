@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "NativeScript",
 "path": "res://how_to/use_rust_scripts/hello_scene.gdns"
 }, {
-"base": "Node2D",
+"base": "KinematicBody2D",
 "class": "Soldier",
 "language": "GDScript",
 "path": "res://scripts/Unit.gd"
