@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name Soldier, "res://assets/IconPack/Spear.png"
 
 # Declare member variables here. Examples:
 # var a = 2
