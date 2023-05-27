@@ -21,6 +21,7 @@ func _on_Area2D_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 		print("click")
 		var position = get_global_mouse_position()
 		var l := Line2D.new()
+		l.antialiased = true
 		l.default_color = Color(0, 0, 0, 1)
 		l.width = 3
 		l.add_point(Vector2(0, 0))

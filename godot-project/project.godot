@@ -9,7 +9,7 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node",
+"base": "",
 "class": "HelloWorld",
 "language": "NativeScript",
 "path": "res://how_to/use_rust_scripts/hello_scene.gdns"
