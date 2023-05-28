@@ -18,9 +18,11 @@ remotesync func spawn_soldier():
 		var map = game.map
 		game.players[player_id]["unit_points"] -= 100
 		var newSoldier = Soldier.instance()
-		var town_center = map.get_node(game.players[player_id]["town_center"])
+		var town_center: TownCenter = map.get_node(game.players[player_id]["town_center"])
+		# print("TownCenter team ", town_center.team)
 		newSoldier.position = Vector2(rand_range(-100, 100), rand_range(-100, 100))
 		town_center.add_child(newSoldier)
+		print("newSoldier ", newSoldier.team)	
 		if player_id == game.my_player_id:
 			$UnitPointsLabel.text = str(game.players[player_id]["unit_points"]) + " unit points"
 	else:

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.580392, 0.811765, 0.419608, 1 )
+
+[node name="ProgressBar" type="ProgressBar"]
+margin_left = -83.5
+margin_top = -11.5
+margin_right = 83.5
+margin_bottom = 11.5
+rect_pivot_offset = Vector2( 518.5, 225.5 )
+custom_styles/fg = SubResource( 1 )
+value = 10.0

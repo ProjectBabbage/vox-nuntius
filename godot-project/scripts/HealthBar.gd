@@ -1,14 +1,28 @@
-extends ProgressBar
+extends Node2D
 
+export (PackedScene) var healthBarPlayer = preload("res://scenes/sub_scenes/HealthBarPlayer.tscn")
+export (PackedScene) var healthBarAI = preload("res://scenes/sub_scenes/HealthBarAI.tscn")
+var health_bar
+var is_team_setup: bool
 
 func _ready():
-	assert(get_parent() is Building or get_parent() is Unit, "Parent has no health")
-	var team = get_parent().team
-	if team == "player":
-		self.get("custom_styles/fg/bg_color").set_bg_color(Color(110, 0, 110, 110))
-	else:
-		self.get("custom_styles/fg/bg_color").set_bg_color(Color(0, 110, 110, 110))
-
+	assert(get_parent().health != null, "Parent has no health")
 
 func _process(_delta):
-	value = get_parent().health.current_health
+	if not is_team_setup:
+		var team = get_parent().team
+		if not team: 
+			return
+			
+		print("parent ", get_parent())
+		print("health bar ", team)
+		if team == "player":
+			health_bar = healthBarPlayer.instance()
+			add_child(health_bar)
+		else:
+			health_bar = healthBarAI.instance()
+			add_child(health_bar)
+		
+		is_team_setup = true
+	health_bar.value = get_parent().health.current_health
+	

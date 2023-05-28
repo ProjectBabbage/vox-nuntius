@@ -3,14 +3,14 @@ class_name Soldier, "res://assets/IconPack/Spear.png"
 
 var order: Order
 var velocity = Vector2.UP * 15
-onready var life_bar: ProgressBar = $LifeBar
 onready var timer: Timer = $Timer
-
+		
 func _ready():
 	var parent_towncenter: TownCenter = get_parent()
 	assert(parent_towncenter is TownCenter, "Soldier is supposed to be spawned as a child of a TownCenter")
 	team = parent_towncenter.team
-	life_bar.value = health.current_health
+	print("This soldier team is ", team )
+	# life_bar.value = health.current_health
 	# var new_style_box:StyleBoxFlat = life_bar.get_stylebox("normal").duplicate() # Gets the current stylebox, overriden or not for normal and duplicates it (This will only work if one is already set!)
 	# new_style_box.bg_color = Color(1,0,0,1) # Changes the duplicate's color to red
 	# var style = StyleBoxFlat.new()
@@ -22,8 +22,6 @@ func _ready():
 
 
 func _physics_process(delta):
-	life_bar.value = health.current_health
-
 	if timer.time_left <= 0:
 		attack()
 		timer.start()
