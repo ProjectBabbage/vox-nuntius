@@ -34,7 +34,9 @@ texture = ExtResource( 2 )
 stretch_mode = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 2, 0 )
 current = true
+zoom = Vector2( 2, 2 )
 script = ExtResource( 1 )
 zoom_speed = 0.15
 
@@ -48,16 +50,17 @@ texture = ExtResource( 9 )
 [node name="HUD" parent="." instance=ExtResource( 7 )]
 
 [node name="Soldier" parent="." instance=ExtResource( 3 )]
-position = Vector2( 217, -65 )
+position = Vector2( -139, 303 )
+team = "ai"
 
 [node name="Soldier2" parent="." instance=ExtResource( 3 )]
-position = Vector2( -325, 123 )
+position = Vector2( -506, -141 )
 
 [node name="TownCenter" parent="." instance=ExtResource( 10 )]
-position = Vector2( -4300, 2262 )
+position = Vector2( -856, 443 )
 
 [node name="TownCenterAI" parent="." instance=ExtResource( 10 )]
-position = Vector2( 4349, -2245 )
+position = Vector2( 872, -451 )
 
 [connection signal="input_event" from="." to="." method="_on_Area2D_input_event"]
 [connection signal="gui_input" from="Temple" to="HUD" method="_on_Temple_gui_input"]
