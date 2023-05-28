@@ -1,7 +1,5 @@
 extends CanvasLayer
 
-var soldierScene = preload("res://scenes/Soldier.tscn")
-
 func _ready():
 	pass
 
