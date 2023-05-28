@@ -5,11 +5,6 @@ var currentLine: Line2D
 
 export var messengerScene: PackedScene
 
-func _ready():
-	pass
-
-const Order = preload("res://scripts/Order.gd")
-
 func _process(_delta):
 	if isWritingPath:
 		currentLine.points[1] = get_global_mouse_position()
