@@ -24,7 +24,6 @@ script = ExtResource( 1 )
 zoom_speed = 0.15
 
 [node name="HUD" parent="." instance=ExtResource( 7 )]
-visible = false
 
 [node name="Background" type="Area2D" parent="."]
 script = ExtResource( 4 )
