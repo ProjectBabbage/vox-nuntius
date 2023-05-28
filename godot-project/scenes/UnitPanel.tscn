@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/UnitPanel.gd" type="Script" id=1]
+
+[node name="UnitPanel" type="Control"]
+margin_right = 118.0
+margin_bottom = 169.0
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 229.0
+margin_bottom = 328.0
+
+[node name="UnitPointsLabel" type="Label" parent="."]
+margin_left = 109.0
+margin_top = 5.0
+margin_right = 224.0
+margin_bottom = 26.0
+text = "10000 Unit points"
+
+[node name="BuySoldierButton" type="Button" parent="."]
+margin_left = 164.0
+margin_top = 55.0
+margin_right = 210.0
+margin_bottom = 75.0
+text = "Buy"
+
+[node name="SoldierLabel" type="Label" parent="."]
+margin_left = 29.0
+margin_top = 58.0
+margin_right = 129.0
+margin_bottom = 72.0
+text = "Soldier: 100 pts"
+
+[connection signal="pressed" from="BuySoldierButton" to="." method="_on_BuySoldierButton_pressed"]

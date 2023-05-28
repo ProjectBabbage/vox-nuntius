@@ -25,6 +25,11 @@ _global_script_classes=[ {
 "path": "res://how_to/use_rust_scripts/hello_scene.gdns"
 }, {
 "base": "Area2D",
+"class": "Map",
+"language": "GDScript",
+"path": "res://scripts/Map.gd"
+}, {
+"base": "Area2D",
 "class": "Message",
 "language": "GDScript",
 "path": "res://scripts/Message.gd"
@@ -48,6 +53,7 @@ _global_script_class_icons={
 "Building": "",
 "Health": "",
 "HelloWorld": "",
+"Map": "",
 "Message": "",
 "Order": "",
 "Soldier": "res://assets/IconPack/Spear.png",
