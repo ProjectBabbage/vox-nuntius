@@ -1,10 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/Camera.gd" type="Script" id=1]
 [ext_resource path="res://assets/Textures/Dirt/Dirt_13-128x128.png" type="Texture" id=2]
-[ext_resource path="res://scenes/Soldier.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/Map.gd" type="Script" id=4]
-[ext_resource path="res://scenes/Messenger.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scripts/TownCenter.gd" type="Script" id=6]
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/Buildings/I_Monolith.png" type="Texture" id=9]
@@ -15,7 +13,6 @@ extents = Vector2( 4757.5, 2594 )
 
 [node name="Map" type="Area2D"]
 script = ExtResource( 4 )
-messengerScene = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 4.5, -7 )
@@ -43,12 +40,6 @@ team = "player"
 position = Vector2( 854, -423 )
 script = ExtResource( 6 )
 team = "ai"
-
-[node name="Soldier" parent="TownCenterAI" instance=ExtResource( 3 )]
-position = Vector2( -1476, 869 )
-
-[node name="Soldier2" parent="TownCenterAI" instance=ExtResource( 3 )]
-position = Vector2( -1447, 152 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 2, 0 )

@@ -1,0 +1,82 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/Lobby.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+margin_right = 1024.0
+margin_bottom = 600.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="Client" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 291.0
+margin_top = 194.0
+margin_right = 399.0
+margin_bottom = 214.0
+text = "Join a game"
+
+[node name="Title" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 215.0
+margin_top = 158.0
+margin_right = 306.0
+margin_bottom = 173.0
+rect_pivot_offset = Vector2( -931.5, -98 )
+text = "Ip address:"
+
+[node name="Ip address label" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -60.5
+margin_top = -20.0
+margin_right = 60.5
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( -931.5, -98 )
+text = "Select an action
+"
+
+[node name="IP" type="LineEdit" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 297.0
+margin_top = 150.0
+margin_right = 477.0
+margin_bottom = 174.0
+text = "127.0.0.1"
+
+[node name="Server" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -402.0
+margin_top = 193.0
+margin_right = -294.0
+margin_bottom = 213.0
+text = "Create a server"
+
+[node name="IP_LIST" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -456.0
+margin_top = 43.0
+margin_right = -239.0
+margin_bottom = 187.0
+
+[connection signal="pressed" from="Client" to="." method="_on_Client_pressed"]
+[connection signal="pressed" from="Server" to="." method="_on_Server_pressed"]

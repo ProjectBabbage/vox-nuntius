@@ -1,0 +1,149 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scripts/Camera.gd" type="Script" id=1]
+[ext_resource path="res://assets/Textures/Dirt/Dirt_13-128x128.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Soldier.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scripts/Temple.gd" type="Script" id=8]
+[ext_resource path="res://assets/Buildings/I_Monolith.png" type="Texture" id=9]
+[ext_resource path="res://scenes/TownCenter.tscn" type="PackedScene" id=10]
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Node2D
+
+const SERVER_PORT = 12345
+const MAX_PLAYERS = 2
+
+# Player info, associate ID to data
+var player_info = {}
+# Info we send to other players
+var my_info
+
+onready var soldier1: KinematicBody2D = $Soldier
+onready var soldier2: KinematicBody2D = $Soldier2
+
+var role
+
+func _ready():
+	role = OS.get_cmdline_args()[0]
+	print(getLocalIpAddress())
+	if role == \"listen\":
+		my_info = {\"name\": \"Server\", \"color\": Color(1, 1, 1)}
+		var peer = NetworkedMultiplayerENet.new()
+		peer.create_server(SERVER_PORT, MAX_PLAYERS)
+		get_tree().network_peer = peer
+		print(\"Listening on port \" + str(SERVER_PORT))
+	elif role == \"join\":
+		my_info = {\"name\": \"Client\", \"color\": Color(1, 1, 1)}
+		yield(get_tree().create_timer(3.0), \"timeout\")
+		var peer = NetworkedMultiplayerENet.new()
+		peer.create_client(\"127.0.0.1\", SERVER_PORT)
+		get_tree().network_peer = peer
+		print(\"Connected\")
+	
+	get_tree().connect(\"network_peer_connected\", self, \"_player_connected\")
+	get_tree().connect(\"network_peer_disconnected\", self, \"_player_disconnected\")
+	get_tree().connect(\"connected_to_server\", self, \"_connected_ok\")
+	get_tree().connect(\"connection_failed\", self, \"_connected_fail\")
+	get_tree().connect(\"server_disconnected\", self, \"_server_disconnected\")
+
+
+func _player_connected(id):
+	# Called on both clients and server when a peer connects. Send my info to it.
+	rpc_id(id, \"register_player\", my_info)
+
+func _player_disconnected(id):
+	player_info.erase(id) # Erase player from info.
+
+func _connected_ok():
+	print(\"Connected to server\")
+	pass # Only called on clients, not server. Will go unused; not useful here.
+
+func _server_disconnected():
+	pass # Server kicked us; show error and abort.
+
+func _connected_fail():
+	print(\"Could not connect to server\")
+	pass # Could not even connect to server; abort.
+
+remote func register_player(info):
+	# Get the id of the RPC sender.
+	var id = get_tree().get_rpc_sender_id()
+	# Store the info
+	player_info[id] = info
+	print(\"Player \" + str(id) + \" registered\")
+	print(player_info)
+
+	# Call function to update lobby UI here
+
+remotesync func move(actionRole, pos):
+	if actionRole == \"listen\":
+		soldier2.position = pos
+	elif actionRole == \"join\":
+		soldier1.position = pos
+
+func _on_Background_input_event(viewport:Node, event:InputEvent, shape_idx:int):
+	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
+		var pos = get_global_mouse_position()
+		rpc(\"move\", role, pos)
+
+"
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4757.5, 2594 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 36.5, 43.5 )
+
+[node name="Node2D2" type="Node2D"]
+script = SubResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+script = ExtResource( 1 )
+zoom_speed = 0.15
+
+[node name="HUD" parent="." instance=ExtResource( 7 )]
+
+[node name="Background" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background"]
+position = Vector2( 4.5, -7 )
+shape = SubResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -4726.0
+margin_top = -2591.0
+margin_right = 4726.0
+margin_bottom = 2591.0
+mouse_filter = 2
+texture = ExtResource( 2 )
+stretch_mode = 2
+
+[node name="Soldier" parent="." instance=ExtResource( 3 )]
+position = Vector2( 410, 130 )
+
+[node name="Soldier2" parent="." instance=ExtResource( 3 )]
+position = Vector2( -325, 123 )
+
+[node name="Temple" type="Area2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Temple"]
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Temple"]
+position = Vector2( 3.5, 0.5 )
+shape = SubResource( 2 )
+
+[node name="TownCenter" parent="." instance=ExtResource( 10 )]
+position = Vector2( -4300, 2262 )
+
+[node name="TownCenterAI" parent="." instance=ExtResource( 10 )]
+position = Vector2( 4349, -2245 )
+
+[connection signal="input_event" from="Background" to="." method="_on_Background_input_event"]
