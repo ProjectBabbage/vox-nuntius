@@ -1,7 +1,7 @@
 extends KinematicBody2D
 class_name Unit
 
-export var team: String # player or ai
+export(String, "player", "ai") var team
 
 var health: Health = Health.new(100)
 var units_to_attack = []

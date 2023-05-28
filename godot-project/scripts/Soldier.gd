@@ -36,7 +36,7 @@ func pickMessage(message):
 
 func _on_CombatArea2D_area_entered(area:Area2D):
 	var parent = area.get_parent()
-	if parent is Unit:
+	if parent is Unit or parent is Building:
 		if parent.team != team:
 			units_to_attack.push_back(parent)
 	elif area is Message:
@@ -44,8 +44,7 @@ func _on_CombatArea2D_area_entered(area:Area2D):
 
 func _on_CombatArea2D_area_exited(area:Area2D):
 	var parent = area.get_parent()
-	if not (parent is Unit):
+	if not (parent is Unit) and not(parent is Building):
 		return
-	var unit : Unit = parent
-	if unit.team != team:
-		units_to_attack.remove(units_to_attack.find(unit))
+	if parent.team != team:
+		units_to_attack.remove(units_to_attack.find(parent))

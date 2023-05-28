@@ -76,6 +76,7 @@ shape = SubResource( 1 )
 one_shot = true
 
 [node name="HealthBar" parent="." instance=ExtResource( 4 )]
+position = Vector2( 4, -61 )
 
 [node name="AttackAnimation" type="AnimationPlayer" parent="."]
 anims/attack = SubResource( 3 )

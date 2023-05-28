@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/TownCenter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Soldier.tscn" type="PackedScene" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Soldier" parent="." instance=ExtResource( 2 )]
+position = Vector2( 926, 193 )
+team = "player"
+
+[node name="TownCenter" parent="." instance=ExtResource( 1 )]
+position = Vector2( 795, 196 )
+team = "ai"
