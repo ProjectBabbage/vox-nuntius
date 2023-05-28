@@ -1,43 +1,53 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/Camera.gd" type="Script" id=1]
-[ext_resource path="res://assets/Textures/Dirt/Dirt_13-128x128.png" type="Texture" id=2]
+[ext_resource path="res://assets/MAP_herbe_400Ko.jpg" type="Texture" id=3]
 [ext_resource path="res://scripts/Map.gd" type="Script" id=4]
 [ext_resource path="res://scripts/TownCenter.gd" type="Script" id=6]
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/Buildings/I_Monolith.png" type="Texture" id=9]
 [ext_resource path="res://scenes/TownCenter.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/MAP - colline.png" type="Texture" id=13]
+[ext_resource path="res://assets/MAP - mountain.png" type="Texture" id=14]
+[ext_resource path="res://assets/River.png" type="Texture" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 4757.5, 2594 )
+extents = Vector2( 4796, 2704.5 )
 
 [node name="Map" type="Area2D"]
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 4.5, -7 )
+position = Vector2( 43, 103.5 )
 shape = SubResource( 1 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -4726.0
-margin_top = -2591.0
-margin_right = 4726.0
-margin_bottom = 2591.0
-mouse_filter = 2
-texture = ExtResource( 2 )
-stretch_mode = 2
+[node name="MapHerbe400Ko" type="Sprite" parent="."]
+position = Vector2( 78, 100 )
+scale = Vector2( 2.51111, 2.51111 )
+texture = ExtResource( 3 )
+
+[node name="Map-Colline" type="Sprite" parent="MapHerbe400Ko"]
+position = Vector2( -1422.48, 193.938 )
+scale = Vector2( 0.993186, 0.993186 )
+texture = ExtResource( 13 )
+
+[node name="River" type="Sprite" parent="MapHerbe400Ko"]
+position = Vector2( -873.617, -407.688 )
+scale = Vector2( 1.30281, 1.30281 )
+texture = ExtResource( 16 )
+
+[node name="Map-Mountain" type="Sprite" parent="MapHerbe400Ko"]
+position = Vector2( 1425.27, -520.487 )
+scale = Vector2( 0.993186, 0.993186 )
+texture = ExtResource( 14 )
 
 [node name="TownCenter" parent="." instance=ExtResource( 10 )]
-position = Vector2( -893, 463 )
+position = Vector2( -2000, 1125 )
 script = ExtResource( 6 )
 team = "player"
 
 [node name="TownCenterAI" parent="." instance=ExtResource( 10 )]
-position = Vector2( 854, -423 )
+position = Vector2( 2000, -1125 )
 script = ExtResource( 6 )
 team = "ai"
 
