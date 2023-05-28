@@ -47,8 +47,6 @@ func _on_CombatArea2D_area_entered(area:Area2D):
 			print("added enemy ", parent)
 	elif area is Message:
 		pickMessage(area)
-	else:
-		print("entered ", parent)
 
 func _on_CombatArea2D_area_exited(area:Area2D):
 	var parent = area.get_parent()
@@ -57,4 +55,3 @@ func _on_CombatArea2D_area_exited(area:Area2D):
 	var unit : Unit = parent
 	if unit.team != team:
 		units_to_attack.remove(units_to_attack.find(unit))
-		print("enemy exited ", unit)
