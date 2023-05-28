@@ -3,6 +3,7 @@
 [ext_resource path="res://HUD.gd" type="Script" id=1]
 [ext_resource path="res://assets/IconPack/Tome.png" type="Texture" id=2]
 [ext_resource path="res://scenes/UnitPanel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://resources/Theme.tres" type="Theme" id=4]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -19,5 +20,23 @@ margin_left = 761.0
 margin_top = 128.0
 margin_right = 807.0
 margin_bottom = 170.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -18.0
+margin_top = 24.0
+margin_right = 22.0
+margin_bottom = 64.0
+theme = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="MarginContainer"]
+margin_top = 6.0
+margin_right = 40.0
+margin_bottom = 34.0
+theme = ExtResource( 3 )
+text = "1/2"
+align = 1
+valign = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
