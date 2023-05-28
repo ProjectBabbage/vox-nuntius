@@ -45,6 +45,11 @@ _global_script_classes=[ {
 "path": "res://scripts/Soldier.gd"
 }, {
 "base": "KinematicBody2D",
+"class": "TownCenter",
+"language": "GDScript",
+"path": "res://scripts/TownCenter.gd"
+}, {
+"base": "KinematicBody2D",
 "class": "Unit",
 "language": "GDScript",
 "path": "res://scripts/Unit.gd"
@@ -57,6 +62,7 @@ _global_script_class_icons={
 "Message": "",
 "Order": "",
 "Soldier": "res://assets/IconPack/Spear.png",
+"TownCenter": "res://assets/Buildings/I_Castle.png",
 "Unit": ""
 }
 

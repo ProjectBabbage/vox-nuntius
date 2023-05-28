@@ -11,12 +11,13 @@ func _ready():
 func _on_BuySoldierButton_pressed():
 	if unit_points >= 100:
 		var map = get_parent().get_parent()
-		assert(map is Map, "double parent of unit panel is not the map")
+		assert(map is Map, "double parent of UnitPanel is not the Map")
+		var town_center = map.get_node("TownCenter")
 		unit_points -= 100
 		$UnitPointsLabel.text = str(unit_points) + " unit points"
 		var newSoldier = Soldier.instance()
-		newSoldier.position = Vector2(map.get_node("TownCenter").position) + Vector2(rand_range(-100, 100), rand_range(-100, 100))
-		map.add_child(newSoldier)
+		newSoldier.position = Vector2(rand_range(-100, 100), rand_range(-100, 100))
+		town_center.add_child(newSoldier)
 		emit_signal("buy_soldier")
 	else:
 		$UnitPointsLabel.text = "Not enough unit points"

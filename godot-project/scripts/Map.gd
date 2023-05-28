@@ -1,15 +1,10 @@
 extends Area2D
 class_name Map
 
+export var messengerScene: PackedScene
 var isWritingPath := false
 var currentLine: Line2D
 
-export var messengerScene: PackedScene
-
-func _ready():
-	pass
-
-const Order = preload("res://scripts/Order.gd")
 
 func _process(_delta):
 	if isWritingPath:

@@ -7,6 +7,11 @@ onready var life_bar: ProgressBar = $LifeBar
 onready var timer: Timer = $Timer
 
 func _ready():
+	var parent_towncenter: TownCenter = get_parent()
+	assert(parent_towncenter is TownCenter, "Soldier is supposed to be spawned as a child of a TownCenter")
+	if team == null:
+		team = parent_towncenter.team
+
 	life_bar.value = health.current_health
 	attack_dmg = 6
 	timer.start(1)
@@ -20,10 +25,10 @@ func _physics_process(delta):
 		timer.start()
 
 	if order:
-		if order.target.distance_to(position) < 1:
+		if order.target.distance_to(global_position) < 1:
 			order = null
 		else:
-			move_and_collide(position.direction_to(order.target) * delta * 100)
+			move_and_collide(global_position.direction_to(order.target) * delta * 100)
 
 
 func pickMessage(message):
