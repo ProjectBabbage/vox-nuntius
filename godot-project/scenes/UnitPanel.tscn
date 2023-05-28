@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://scripts/UnitPanel.gd" type="Script" id=1]
-[ext_resource path="res://scripts/BuySoldierButton.gd" type="Script" id=2]
 
 [node name="UnitPanel" type="Control"]
 margin_right = 118.0
@@ -25,7 +24,6 @@ margin_top = 55.0
 margin_right = 210.0
 margin_bottom = 75.0
 text = "Buy"
-script = ExtResource( 2 )
 
 [node name="SoldierLabel" type="Label" parent="."]
 margin_left = 29.0
