@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Arbret éparse.png-8166a76e396880f1a9a83b713c244f56.stex"
+path="res://.import/Arbre_jaune.png-675a452c4b51a3dcddac22f8f9bb0a59.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Arbret éparse.png"
-dest_files=[ "res://.import/Arbret éparse.png-8166a76e396880f1a9a83b713c244f56.stex" ]
+source_file="res://assets/Arbre_jaune.png"
+dest_files=[ "res://.import/Arbre_jaune.png-675a452c4b51a3dcddac22f8f9bb0a59.stex" ]
 
 [params]
 

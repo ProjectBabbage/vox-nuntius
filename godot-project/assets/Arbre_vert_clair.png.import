@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MAP - colline.png-f2e5f38008c0cc666cbc4a4dd94cd2bc.stex"
+path="res://.import/Arbre_vert_clair.png-2cfcf08708844aea4f37fed8d0d2ac43.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/MAP - colline.png"
-dest_files=[ "res://.import/MAP - colline.png-f2e5f38008c0cc666cbc4a4dd94cd2bc.stex" ]
+source_file="res://assets/Arbre_vert_clair.png"
+dest_files=[ "res://.import/Arbre_vert_clair.png-2cfcf08708844aea4f37fed8d0d2ac43.stex" ]
 
 [params]
 

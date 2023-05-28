@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Arbre vert.png-b8e15bf3a179f2e9c4ce43e5acfca478.stex"
+path="res://.import/Arbret_eparse.png-ea8fbf6b3f6b1ddd70e1dd0f868cf563.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Arbre vert.png"
-dest_files=[ "res://.import/Arbre vert.png-b8e15bf3a179f2e9c4ce43e5acfca478.stex" ]
+source_file="res://assets/Arbret_eparse.png"
+dest_files=[ "res://.import/Arbret_eparse.png-ea8fbf6b3f6b1ddd70e1dd0f868cf563.stex" ]
 
 [params]
 

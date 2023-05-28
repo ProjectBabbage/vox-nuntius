@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Victoire de Samothrace.png-d00a333c58164af2fa617a959f3ceef0.stex"
+path="res://.import/MAP_colline.png-0ac49138065e0bea5c227900bcda6292.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Victoire de Samothrace.png"
-dest_files=[ "res://.import/Victoire de Samothrace.png-d00a333c58164af2fa617a959f3ceef0.stex" ]
+source_file="res://assets/MAP_colline.png"
+dest_files=[ "res://.import/MAP_colline.png-0ac49138065e0bea5c227900bcda6292.stex" ]
 
 [params]
 

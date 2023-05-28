@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MAP - mountain.png-ebc451ba0738c0c1853775eac55e16ca.stex"
+path="res://.import/MAP-mountain.png-1444d1206a30f8f25f987edd6ae44cb0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/MAP - mountain.png"
-dest_files=[ "res://.import/MAP - mountain.png-ebc451ba0738c0c1853775eac55e16ca.stex" ]
+source_file="res://assets/MAP-mountain.png"
+dest_files=[ "res://.import/MAP-mountain.png-1444d1206a30f8f25f987edd6ae44cb0.stex" ]
 
 [params]
 

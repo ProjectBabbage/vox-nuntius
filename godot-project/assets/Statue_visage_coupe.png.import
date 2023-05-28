@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Arbre vert clair.png-3dcad8ea98ce257c28c46d0a04a67726.stex"
+path="res://.import/Statue_visage_coupe.png-65ed47cad24474699ecfef28b487c0e1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Arbre vert clair.png"
-dest_files=[ "res://.import/Arbre vert clair.png-3dcad8ea98ce257c28c46d0a04a67726.stex" ]
+source_file="res://assets/Statue_visage_coupe.png"
+dest_files=[ "res://.import/Statue_visage_coupe.png-65ed47cad24474699ecfef28b487c0e1.stex" ]
 
 [params]
 
