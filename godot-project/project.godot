@@ -49,7 +49,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/Soldier.gd"
 }, {
-"base": "KinematicBody2D",
+"base": "Building",
 "class": "TownCenter",
 "language": "GDScript",
 "path": "res://scripts/TownCenter.gd"
