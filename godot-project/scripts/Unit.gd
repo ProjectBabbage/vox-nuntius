@@ -12,6 +12,7 @@ var attack_timer: Timer
 
 func attack():
 	for unit in units_to_attack:
+		get_node("AttackAnimation").play("attack")
 		unit.lose_health(attack_dmg)
 
 func lose_health(amount: int):
