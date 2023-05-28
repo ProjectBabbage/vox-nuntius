@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Statue visage coupé.png-94b43c389f97bd35b2b1b1d1f93d54c4.stex"
+path="res://.import/Statue visage coupé.png-319e8e3e8c52b849648eb5f3b88844a6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Statue visage coupé.png"
-dest_files=[ "res://.import/Statue visage coupé.png-94b43c389f97bd35b2b1b1d1f93d54c4.stex" ]
+source_file="res://assets/Statue visage coupé.png"
+dest_files=[ "res://.import/Statue visage coupé.png-319e8e3e8c52b849648eb5f3b88844a6.stex" ]
 
 [params]
 
