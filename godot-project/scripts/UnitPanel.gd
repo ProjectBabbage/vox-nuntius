@@ -1,23 +1,28 @@
 extends Control
 
-export var unit_points = 10000
-
 # import instance of solider
 var Soldier = preload("res://scenes/Soldier.tscn")
 
+onready var game: Game = get_tree().root.get_node("Game")
+
 func _ready():
-	$UnitPointsLabel.text = str(unit_points) + " unit points"
+	$UnitPointsLabel.text = str(game.players[game.my_player_id]["unit_points"]) + " unit points"
+	pass
 
 func _on_BuySoldierButton_pressed():
-	if unit_points >= 100:
-		var map = get_parent().get_parent()
-		assert(map is Map, "double parent of UnitPanel is not the Map")
-		var town_center = map.get_node("TownCenter")
-		unit_points -= 100
-		$UnitPointsLabel.text = str(unit_points) + " unit points"
+	rpc("spawn_soldier")
+
+remotesync func spawn_soldier():
+	var player_id = get_tree().get_rpc_sender_id()
+	if game.players[player_id]["unit_points"] >= 100:
+		var map = game.map
+		game.players[player_id]["unit_points"] -= 100
 		var newSoldier = Soldier.instance()
+		var town_center = map.get_node(game.players[player_id]["town_center"])
 		newSoldier.position = Vector2(rand_range(-100, 100), rand_range(-100, 100))
+		print("thing")
 		town_center.add_child(newSoldier)
-		emit_signal("buy_soldier")
+		if player_id == game.my_player_id:
+			$UnitPointsLabel.text = str(game.players[player_id]["unit_points"]) + " unit points"
 	else:
 		$UnitPointsLabel.text = "Not enough unit points"
