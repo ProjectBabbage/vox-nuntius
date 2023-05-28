@@ -70,3 +70,4 @@ position = Vector2( -4300, 2262 )
 position = Vector2( 4349, -2245 )
 
 [connection signal="input_event" from="Background" to="Background" method="_on_Area2D_input_event"]
+[connection signal="input_event" from="Temple" to="HUD" method="_on_Temple_input_event"]
