@@ -8,7 +8,7 @@ var order: Order
 
 func _physics_process(delta):
 	if order:
-		if order.origin.distance_to(position) < 1:
+		if order.origin.distance_to(position) < 10:
 			var message = messageScene.instance()
 			message.position = order.origin
 			message.order = order
