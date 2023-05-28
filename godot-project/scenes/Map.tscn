@@ -5,9 +5,9 @@
 [ext_resource path="res://scenes/Soldier.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/Map.gd" type="Script" id=4]
 [ext_resource path="res://scenes/Messenger.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/IconPack/Map.png" type="Texture" id=6]
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/Temple.gd" type="Script" id=8]
+[ext_resource path="res://scripts/Temple.gd" type="Script" id=8]
+[ext_resource path="res://assets/Buildings/I_Monolith.png" type="Texture" id=9]
 [ext_resource path="res://scenes/TownCenter.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -56,7 +56,7 @@ position = Vector2( -325, 123 )
 script = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="Temple"]
-texture = ExtResource( 6 )
+texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Temple"]
 position = Vector2( 3.5, 0.5 )
