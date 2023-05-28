@@ -18,4 +18,3 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="HealthBar" parent="." instance=ExtResource( 3 )]
-position = Vector2( -1, -153 )

@@ -11,15 +11,21 @@ var game
 
 func _process(_delta):
 	if isWritingPath:
-		currentLine.points[1] = get_global_mouse_position()
+		currentLine.points[currentLine.points.size() - 1] = get_global_mouse_position()
+	if isWritingPath and Input.is_action_just_pressed("cancel"):
+		currentLine.queue_free()
+		isWritingPath = false
 
 
 func _on_Area2D_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
-		if isWritingPath:
+		if isWritingPath and Input.is_action_pressed("chain"):
+			currentLine.add_point(get_global_mouse_position())
+		elif isWritingPath:
 			isWritingPath = false
+			currentLine.add_point(get_global_mouse_position())
 			var end_position = get_global_mouse_position()
-			var order = Order.new(currentLine.points[0], end_position)
+			var order = Order.new(currentLine.points)
 			rpc("send_messenger", order.toDict())
 			currentLine.queue_free()
 		else:
@@ -33,7 +39,7 @@ func _on_Area2D_input_event(_viewport: Node, event: InputEvent, _shape_idx: int)
 			add_child(currentLine)
 
 remotesync func send_messenger(orderDict: Dictionary):
-	var order = Order.new(orderDict["origin"], orderDict["target"])
+	var order = Order.new(orderDict["points"])
 	var player_id = get_tree().get_rpc_sender_id()
 	var messenger = messengerScene.instance()
 	messenger.position = get_node(game.players[player_id].town_center).position

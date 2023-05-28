@@ -3,6 +3,8 @@ class_name Soldier, "res://assets/IconPack/Spear.png"
 
 var order: Order
 var velocity = Vector2.UP * 15
+var current_target_point_index: int = 1
+
 onready var timer: Timer = $Timer
 		
 func _ready():
@@ -19,14 +21,17 @@ func _physics_process(delta):
 		timer.start()
 
 	if order:
-		if order.target.distance_to(global_position) < 1:
-			order = null
+		if order.points[current_target_point_index].distance_to(global_position) < 10:
+			current_target_point_index += 1
+			if current_target_point_index >= order.points.size():
+				order = null
 		else:
-			move_and_collide(global_position.direction_to(order.target) * delta * 100)
+			move_and_collide(global_position.direction_to(order.points[current_target_point_index]) * delta * 100)
 
 
 func pickMessage(message):
 	order = message.order
+	current_target_point_index = 1
 	message.queue_free()
 
 func _on_CombatArea2D_area_entered(area:Area2D):
