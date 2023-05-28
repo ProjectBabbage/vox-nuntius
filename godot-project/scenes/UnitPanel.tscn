@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://UnitPanel.gd" type="Script" id=1]
-[ext_resource path="res://BuySoldierButton.gd" type="Script" id=2]
+[ext_resource path="res://scripts/UnitPanel.gd" type="Script" id=1]
+[ext_resource path="res://scripts/BuySoldierButton.gd" type="Script" id=2]
 
 [node name="UnitPanel" type="Control"]
 margin_right = 118.0
