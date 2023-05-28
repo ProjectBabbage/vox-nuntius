@@ -14,7 +14,7 @@ margin_right = 156.0
 margin_bottom = 159.0
 icon = ExtResource( 2 )
 
-[node name="Control" parent="." instance=ExtResource( 3 )]
+[node name="UnitPanelScene" parent="." instance=ExtResource( 3 )]
 margin_left = 761.0
 margin_top = 128.0
 margin_right = 807.0

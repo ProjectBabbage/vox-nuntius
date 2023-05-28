@@ -1,4 +1,5 @@
 extends Area2D
+class_name Map
 
 var isWritingPath := false
 var currentLine: Line2D
