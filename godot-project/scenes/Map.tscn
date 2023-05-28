@@ -14,7 +14,7 @@
 extents = Vector2( 4757.5, 2594 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 36.5, 43.5 )
+extents = Vector2( 83.5, 101.5 )
 
 [node name="Node2D2" type="Node2D"]
 
@@ -24,6 +24,7 @@ script = ExtResource( 1 )
 zoom_speed = 0.15
 
 [node name="HUD" parent="." instance=ExtResource( 7 )]
+visible = false
 
 [node name="Background" type="Area2D" parent="."]
 script = ExtResource( 4 )
@@ -59,7 +60,7 @@ script = ExtResource( 8 )
 texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Temple"]
-position = Vector2( 3.5, 0.5 )
+position = Vector2( -1.5, -18.5 )
 shape = SubResource( 2 )
 
 [node name="TownCenter" parent="." instance=ExtResource( 10 )]
