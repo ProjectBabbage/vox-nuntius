@@ -9,14 +9,10 @@ onready var timer: Timer = $Timer
 func _ready():
 	var parent_towncenter: TownCenter = get_parent()
 	assert(parent_towncenter is TownCenter, "Soldier is supposed to be spawned as a child of a TownCenter")
-	team = parent_towncenter.team
+	if team == null:
+		team = parent_towncenter.team
+
 	life_bar.value = health.current_health
-	# var new_style_box:StyleBoxFlat = life_bar.get_stylebox("normal").duplicate() # Gets the current stylebox, overriden or not for normal and duplicates it (This will only work if one is already set!)
-	# new_style_box.bg_color = Color(1,0,0,1) # Changes the duplicate's color to red
-	# var style = StyleBoxFlat.new()
-	# style.fg_color = Color(1,0,0,1)
-	# life_bar.add_stylebox_override("normal", style)# Now we have replaced the override with our new, red one
-	# life_bar.add_stylebox_override("Theme Overrides/styles/fg").set_bg_color(Color(1, 0, 0) if team == "ai" else Color(0, 0, 1))
 	attack_dmg = 6
 	timer.start(1)
 

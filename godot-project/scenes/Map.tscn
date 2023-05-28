@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/Camera.gd" type="Script" id=1]
-[ext_resource path="res://assets/Textures/Dirt/Dirt_13-128x128.png" type="Texture" id=2]
+[ext_resource path="res://assets/Textures/background/MAP herbe.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Soldier.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/Map.gd" type="Script" id=4]
+[ext_resource path="res://scenes/Messenger.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scripts/TownCenter.gd" type="Script" id=6]
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/Buildings/I_Monolith.png" type="Texture" id=9]
@@ -13,6 +15,7 @@ extents = Vector2( 4757.5, 2594 )
 
 [node name="Map" type="Area2D"]
 script = ExtResource( 4 )
+messengerScene = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 4.5, -7 )
@@ -23,10 +26,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -4726.0
-margin_top = -2591.0
-margin_right = 4726.0
-margin_bottom = 2591.0
+margin_left = -5221.0
+margin_top = -3104.0
+margin_right = 4231.0
+margin_bottom = 2078.0
 mouse_filter = 2
 texture = ExtResource( 2 )
 stretch_mode = 2
@@ -41,10 +44,20 @@ position = Vector2( 854, -423 )
 script = ExtResource( 6 )
 team = "ai"
 
+[node name="Soldier" parent="TownCenterAI" instance=ExtResource( 3 )]
+position = Vector2( -1476, 869 )
+
+[node name="Soldier2" parent="TownCenterAI" instance=ExtResource( 3 )]
+position = Vector2( -1447, 152 )
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 2, 0 )
 current = true
 zoom = Vector2( 2, 2 )
+limit_left = -1000
+limit_top = -700
+limit_right = 1000
+limit_bottom = 700
 script = ExtResource( 1 )
 zoom_speed = 0.15
 

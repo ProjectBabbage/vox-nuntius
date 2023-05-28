@@ -75,20 +75,8 @@ _global_script_class_icons={
 [application]
 
 config/name="vox nuntius"
-run/main_scene="res://scenes/Game.tscn"
+run/main_scene="res://scenes/Map.tscn"
 config/icon="res://assets/scroll.png"
-
-[debug]
-
-multirun/number_of_windows=2
-multirun/window_distance=1270
-multirun/add_custom_args=true
-multirun/first_window_args="listen"
-multirun/other_window_args="join"
-
-[editor_plugins]
-
-enabled=PoolStringArray( "res://addons/multirun/plugin.cfg" )
 
 [gui]
 
