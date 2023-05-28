@@ -15,7 +15,6 @@ func attack():
 		unit.lose_health(attack_dmg)
 
 func lose_health(amount: int):
-	print("lose health ", health.current_health)
 	health.current_health -= amount
 	if health.current_health <= 0:
 		queue_free()
