@@ -20,7 +20,7 @@ func _process(_delta):
 			health_bar = healthBarAI.instance()
 			add_child(health_bar)
 		
-		health_bar.max_health = get_parent().health.current_health
+		health_bar.set_max(get_parent().health.current_health)
 
 		is_team_setup = true
 	health_bar.value = get_parent().health.current_health
