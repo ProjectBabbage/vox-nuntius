@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/Camera.gd" type="Script" id=1]
 [ext_resource path="res://assets/Textures/Dirt/Dirt_13-128x128.png" type="Texture" id=2]
@@ -6,9 +6,8 @@
 [ext_resource path="res://scripts/Map.gd" type="Script" id=4]
 [ext_resource path="res://scenes/Messenger.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/IconPack/Map.png" type="Texture" id=6]
-[ext_resource path="res://assets/IconPack/Tome.png" type="Texture" id=7]
+[ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Temple.gd" type="Script" id=8]
-[ext_resource path="res://scenes/HUD.gd" type="Script" id=9]
 [ext_resource path="res://scenes/TownCenter.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -24,15 +23,7 @@ current = true
 script = ExtResource( 1 )
 zoom_speed = 0.15
 
-[node name="HUD" type="CanvasLayer" parent="."]
-script = ExtResource( 9 )
-
-[node name="Button" type="Button" parent="HUD"]
-margin_left = 47.0
-margin_top = 56.0
-margin_right = 156.0
-margin_bottom = 159.0
-icon = ExtResource( 7 )
+[node name="HUD" parent="." instance=ExtResource( 7 )]
 
 [node name="Background" type="Area2D" parent="."]
 script = ExtResource( 4 )
@@ -77,6 +68,4 @@ position = Vector2( -4300, 2262 )
 [node name="TownCenterAI" parent="." instance=ExtResource( 10 )]
 position = Vector2( 4349, -2245 )
 
-[connection signal="pressed" from="HUD/Button" to="HUD" method="_on_Button_pressed"]
 [connection signal="input_event" from="Background" to="Background" method="_on_Area2D_input_event"]
-[connection signal="input_event" from="Temple" to="HUD" method="_on_Temple_input_event"]
