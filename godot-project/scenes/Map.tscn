@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/Camera.gd" type="Script" id=1]
-[ext_resource path="res://assets/MAP_herbe_400Ko.jpg" type="Texture" id=3]
+[ext_resource path="res://scenes/Bush.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/Textures/Dirt/Dirt_13-128x128.png" type="Texture" id=3]
 [ext_resource path="res://scripts/Map.gd" type="Script" id=4]
-[ext_resource path="res://scripts/TownCenter.gd" type="Script" id=6]
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/Buildings/I_Monolith.png" type="Texture" id=9]
 [ext_resource path="res://scenes/TownCenter.tscn" type="PackedScene" id=10]
@@ -16,39 +16,72 @@ extents = Vector2( 4796, 2704.5 )
 
 [node name="Map" type="Area2D"]
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_vertical_guides_": [ -4689.0 ]
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 43, 103.5 )
 shape = SubResource( 1 )
 
-[node name="MapHerbe400Ko" type="Sprite" parent="."]
-position = Vector2( 78, 100 )
-scale = Vector2( 2.51111, 2.51111 )
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -4722.0
+margin_top = -2663.0
+margin_right = 4850.0
+margin_bottom = 2791.0
+mouse_filter = 2
 texture = ExtResource( 3 )
+stretch_mode = 2
 
-[node name="Map-Colline" type="Sprite" parent="MapHerbe400Ko"]
-position = Vector2( -1422.48, 193.938 )
-scale = Vector2( 0.993186, 0.993186 )
-texture = ExtResource( 13 )
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( -11548, 4013 )
+scale = Vector2( 4.4251, 4.4251 )
+collision_layer = 16
+collision_mask = 10
 
-[node name="River" type="Sprite" parent="MapHerbe400Ko"]
-position = Vector2( -873.617, -407.688 )
-scale = Vector2( 1.30281, 1.30281 )
+[node name="River" type="Sprite" parent="StaticBody2D2"]
+position = Vector2( 2293.7, -1160.61 )
+scale = Vector2( 0.679397, 0.679397 )
 texture = ExtResource( 16 )
 
-[node name="Map-Mountain" type="Sprite" parent="MapHerbe400Ko"]
-position = Vector2( 1425.27, -520.487 )
-scale = Vector2( 0.993186, 0.993186 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+position = Vector2( -272.391, -295.685 )
+polygon = PoolVector2Array( 2367.5, -1037.3, 2464.67, -973.349, 2528.17, -890.187, 2631.45, -891.317, 2586.25, -950.977, 2494.73, -1022.39, 2403.88, -1065.32, 2276.65, -1213.8, 2239.59, -1212.67, 2248.18, -1167.47, 2329.31, -1053.57 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( -3717, 1309 )
+scale = Vector2( 2.10359, 2.10359 )
+collision_layer = 16
+collision_mask = 10
+
+[node name="Map-Colline" type="Sprite" parent="StaticBody2D"]
+texture = ExtResource( 13 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( -272.391, -295.685 )
+polygon = PoolVector2Array( 284.276, 281.423, 183.971, 480.606, 244.819, 659.824, 221.526, 751.571, 119.795, 785.323, -2.37695, 772.013, -11.4092, 638.907, -35.6533, 608.958, -57.5208, 608.007, -166.857, 714.967, -227.23, 738.736, -229.607, 160.202, -41.8333, -156.875, 38.5055, -193.003, 91.748, -186.823, 60.3729, -100.305, 84.6171, -33.2765, 164.48, 35.1779, 140.236, 188.249 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2( -62649.1, 21770.9 )
+scale = Vector2( 19.5815, 19.5815 )
+collision_layer = 16
+collision_mask = 10
+
+[node name="Map-Mountain" type="Sprite" parent="StaticBody2D3"]
+position = Vector2( 3398.61, -1200.06 )
+scale = Vector2( 0.0941495, 0.0941495 )
 texture = ExtResource( 14 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
+position = Vector2( -272.394, -295.888 )
+polygon = PoolVector2Array( 3713.5, -882.26, 3704, -884.507, 3696.44, -893.699, 3688.78, -899.776, 3694.45, -908.407, 3688.78, -913.718, 3682.45, -914.586, 3678.31, -912.492, 3667.13, -912.594, 3661.2, -911.318, 3654.77, -912.237, 3644.96, -907.334, 3635.87, -905.7, 3623.87, -908.815, 3623.67, -917.599, 3634.75, -922.297, 3641.18, -933.379, 3658.14, -943.797, 3675.45, -936.545, 3684.9, -923.319, 3695.73, -918.876, 3698.59, -914.484, 3702.01, -916.475, 3704.15, -914.382, 3705.02, -908.917, 3711.1, -910.041, 3716.36, -906.415, 3718.35, -901.87, 3717.99, -883.383 )
 
 [node name="TownCenter" parent="." instance=ExtResource( 10 )]
 position = Vector2( -2000, 1125 )
-script = ExtResource( 6 )
 team = "player"
 
 [node name="TownCenterAI" parent="." instance=ExtResource( 10 )]
 position = Vector2( 2000, -1125 )
-script = ExtResource( 6 )
 team = "ai"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -66,6 +99,36 @@ margin_bottom = 164.0
 texture = ExtResource( 9 )
 
 [node name="HUD" parent="." instance=ExtResource( 7 )]
+
+[node name="Bush5" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1.28894e+06, 448746 )
+
+[node name="Bush2" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1.28934e+06, 447943 )
+
+[node name="Bush3" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1.28949e+06, 448329 )
+
+[node name="Bush4" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1.28934e+06, 448528 )
+
+[node name="Bush6" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1.28829e+06, 448249 )
+
+[node name="Bush7" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1.28882e+06, 447879 )
+
+[node name="Bush8" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1.28863e+06, 448012 )
+
+[node name="Bush9" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1.28847e+06, 448115 )
+
+[node name="Bush" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1.28917e+06, 448622 )
+
+[node name="Bush10" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1.28839e+06, 448675 )
 
 [connection signal="input_event" from="." to="." method="_on_Area2D_input_event"]
 [connection signal="gui_input" from="Temple" to="HUD" method="_on_Temple_gui_input"]
