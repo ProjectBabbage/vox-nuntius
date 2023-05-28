@@ -2,10 +2,6 @@ extends Control
 
 export var unit_points = 10000
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 # import instance of solider
 var Soldier = preload("res://scenes/Soldier.tscn")
 
@@ -20,7 +16,7 @@ func _on_BuySoldierButton_pressed():
 		unit_points -= 100
 		$UnitPointsLabel.text = str(unit_points) + " unit points"
 		var newSoldier = Soldier.instance()
-		newSoldier.position = Vector2(rand_range(-4750, -4000), rand_range(2000, 2500))
+		newSoldier.position = Vector2(map.get_node("TownCenter").position) + Vector2(rand_range(-100, 100), rand_range(-100, 100))
 		map.add_child(newSoldier)
 		emit_signal("buy_soldier")
 	else:
