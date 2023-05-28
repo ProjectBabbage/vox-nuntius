@@ -13,9 +13,6 @@ func _process(_delta):
 		var team = get_parent().team
 		if not team: 
 			return
-			
-		print("parent ", get_parent())
-		print("health bar ", team)
 		if team == "player":
 			health_bar = healthBarPlayer.instance()
 			add_child(health_bar)
