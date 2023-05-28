@@ -9,6 +9,7 @@ font_data = ExtResource( 1 )
 [sub_resource type="StyleBoxEmpty" id=4]
 
 [sub_resource type="DynamicFont" id=6]
+size = 50
 font_data = ExtResource( 1 )
 
 [resource]

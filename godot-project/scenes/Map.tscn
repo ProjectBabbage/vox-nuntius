@@ -46,7 +46,6 @@ margin_bottom = 164.0
 texture = ExtResource( 9 )
 
 [node name="HUD" parent="." instance=ExtResource( 7 )]
-visible = false
 
 [node name="Soldier" parent="." instance=ExtResource( 3 )]
 position = Vector2( 217, -65 )
