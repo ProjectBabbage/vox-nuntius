@@ -16,9 +16,9 @@ func _on_Area2D_input_event(_viewport: Node, event: InputEvent, _shape_idx: int)
 			isWritingPath = false
 			var end_position = get_global_mouse_position()
 			var messenger = messengerScene.instance()
-			messenger.position = Vector2(0, 0)
-			messenger.order = Order.new(currentLine.points[0], end_position)
 			add_child(messenger)
+			messenger.position = Vector2(get_node("TownCenter").position)
+			messenger.order = Order.new(currentLine.points[0], end_position)
 			currentLine.queue_free()
 		else:
 			isWritingPath = true
