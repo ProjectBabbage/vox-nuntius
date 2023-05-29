@@ -78,11 +78,11 @@ position = Vector2( -272.394, -295.888 )
 polygon = PoolVector2Array( 3713.5, -882.26, 3704, -884.507, 3696.44, -893.699, 3688.78, -899.776, 3694.45, -908.407, 3688.78, -913.718, 3682.45, -914.586, 3678.31, -912.492, 3667.13, -912.594, 3661.2, -911.318, 3654.77, -912.237, 3644.96, -907.334, 3635.87, -905.7, 3623.87, -908.815, 3623.67, -917.599, 3634.75, -922.297, 3641.18, -933.379, 3658.14, -943.797, 3675.45, -936.545, 3684.9, -923.319, 3695.73, -918.876, 3698.59, -914.484, 3702.01, -916.475, 3704.15, -914.382, 3705.02, -908.917, 3711.1, -910.041, 3716.36, -906.415, 3718.35, -901.87, 3717.99, -883.383 )
 
 [node name="TownCenter" parent="." instance=ExtResource( 10 )]
-position = Vector2( -2000, 1125 )
+position = Vector2( -1253, 577 )
 team = "player"
 
 [node name="TownCenterAI" parent="." instance=ExtResource( 10 )]
-position = Vector2( 2000, -1125 )
+position = Vector2( 1359, -725 )
 team = "ai"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -113,13 +113,13 @@ position = Vector2( -1.28894e+06, 448746 )
 position = Vector2( -1.28934e+06, 447943 )
 
 [node name="Bush3" parent="." instance=ExtResource( 2 )]
-position = Vector2( -1.28949e+06, 448329 )
+position = Vector2( -1.28786e+06, 449733 )
 
 [node name="Bush4" parent="." instance=ExtResource( 2 )]
-position = Vector2( -1.28934e+06, 448528 )
+position = Vector2( -1.28946e+06, 450059 )
 
 [node name="Bush6" parent="." instance=ExtResource( 2 )]
-position = Vector2( -1.28829e+06, 448249 )
+position = Vector2( -1.28887e+06, 450132 )
 
 [node name="Bush7" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1.28882e+06, 447879 )

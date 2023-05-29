@@ -17,3 +17,6 @@ shape = SubResource( 2 )
 [node name="Scroll" type="Sprite" parent="."]
 scale = Vector2( 0.227419, 0.227419 )
 texture = ExtResource( 1 )
+
+[connection signal="mouse_entered" from="." to="." method="_on_Message_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_Message_mouse_exited"]
