@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/scroll.png" type="Texture" id=1]
+[ext_resource path="res://assets/Scroll256x256.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Message.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=2]
@@ -15,6 +15,5 @@ script = ExtResource( 2 )
 shape = SubResource( 2 )
 
 [node name="Scroll" type="Sprite" parent="."]
-position = Vector2( 0, 9.53674e-07 )
-scale = Vector2( 0.119355, 0.119355 )
+scale = Vector2( 0.227419, 0.227419 )
 texture = ExtResource( 1 )

@@ -6,7 +6,6 @@ var currentLine: Line2D
 
 const Order = preload("res://scripts/Order.gd")
 var messengerScene = preload("res://scenes/Messenger.tscn")
-
 var game 
 
 func _process(_delta):
@@ -41,7 +40,10 @@ func _on_Area2D_input_event(_viewport: Node, event: InputEvent, _shape_idx: int)
 remotesync func send_messenger(orderDict: Dictionary):
 	var order = Order.new(orderDict["points"])
 	var player_id = get_tree().get_rpc_sender_id()
+	if game.players[player_id]["available_nuntius"] == 0:
+		return
 	var messenger = messengerScene.instance()
 	messenger.position = get_node(game.players[player_id].town_center).position
 	messenger.order = order
 	add_child(messenger)
+	game.players[player_id]["available_nuntius"] -= 1
