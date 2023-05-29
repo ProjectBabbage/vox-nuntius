@@ -7,7 +7,7 @@
 [ext_resource path="res://assets/Buildings/I_Dungeon.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
-size = 54
+size = 65
 font_data = ExtResource( 4 )
 
 [node name="HUD" type="CanvasLayer"]
@@ -26,21 +26,22 @@ margin_bottom = 176.0
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -18.0
-margin_top = 24.0
-margin_right = 108.0
-margin_bottom = 80.0
+margin_left = -63.0
+margin_right = 80.0
+margin_bottom = 102.0
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer"]
-margin_right = 300.0
-margin_bottom = 300.0
+margin_right = 143.0
+margin_bottom = 102.0
 texture = ExtResource( 5 )
+expand = true
 
 [node name="Label" type="Label" parent="MarginContainer"]
-margin_top = 122.0
-margin_right = 300.0
-margin_bottom = 177.0
+margin_top = 18.0
+margin_right = 143.0
+margin_bottom = 83.0
 theme = ExtResource( 2 )
+custom_colors/font_color = Color( 0.105882, 0.0901961, 0.0901961, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "1/2"
 align = 1

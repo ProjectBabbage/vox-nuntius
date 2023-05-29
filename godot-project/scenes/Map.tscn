@@ -4,10 +4,10 @@
 [ext_resource path="res://scenes/Bush.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/MAP_herbe_3.jpg" type="Texture" id=3]
 [ext_resource path="res://scripts/Map.gd" type="Script" id=4]
+[ext_resource path="res://assets/Temple_blanc.png" type="Texture" id=5]
+[ext_resource path="res://MAP_colline.png" type="Texture" id=6]
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/Buildings/I_Monolith.png" type="Texture" id=9]
 [ext_resource path="res://scenes/TownCenter.tscn" type="PackedScene" id=10]
-[ext_resource path="res://assets/MAP_colline.png" type="Texture" id=13]
 [ext_resource path="res://assets/MAP-mountain.png" type="Texture" id=14]
 [ext_resource path="res://assets/River.png" type="Texture" id=16]
 
@@ -50,13 +50,13 @@ position = Vector2( -272.391, -295.685 )
 polygon = PoolVector2Array( 2367.5, -1037.3, 2464.67, -973.349, 2528.17, -890.187, 2631.45, -891.317, 2586.25, -950.977, 2494.73, -1022.39, 2403.88, -1065.32, 2276.65, -1213.8, 2239.59, -1212.67, 2248.18, -1167.47, 2329.31, -1053.57 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( -3717, 1309 )
+position = Vector2( -3677, 647 )
 scale = Vector2( 2.10359, 2.10359 )
 collision_layer = 16
 collision_mask = 10
 
 [node name="Map-Colline" type="Sprite" parent="StaticBody2D"]
-texture = ExtResource( 13 )
+texture = ExtResource( 6 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2( -272.391, -295.685 )
@@ -93,11 +93,16 @@ script = ExtResource( 1 )
 zoom_speed = 0.15
 
 [node name="Temple" type="TextureRect" parent="."]
-margin_left = -144.0
-margin_top = -136.0
-margin_right = 156.0
-margin_bottom = 164.0
-texture = ExtResource( 9 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -154.0
+margin_top = -154.0
+margin_right = 154.0
+margin_bottom = 154.0
+texture = ExtResource( 5 )
+expand = true
 
 [node name="HUD" parent="." instance=ExtResource( 7 )]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/Soldier.gd" type="Script" id=1]
-[ext_resource path="res://assets/soldier_blue.png" type="Texture" id=2]
+[ext_resource path="res://assets/soldier_white.png" type="Texture" id=2]
 [ext_resource path="res://scenes/HealthBar.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CircleShape2D" id=4]
