@@ -4,11 +4,16 @@
 [ext_resource path="res://scenes/Soldier.tscn" type="PackedScene" id=2]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2( -241, 21 )
 
-[node name="Soldier" parent="." instance=ExtResource( 2 )]
-position = Vector2( 926, 193 )
+[node name="TownCenterAI2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1528, 377 )
+team = "ai"
+
+[node name="TownCenterPlayer" parent="." instance=ExtResource( 1 )]
+position = Vector2( 795, 196 )
 team = "player"
 
-[node name="TownCenter" parent="." instance=ExtResource( 1 )]
-position = Vector2( 795, 196 )
-team = "ai"
+[node name="Soldier" parent="TownCenterPlayer" instance=ExtResource( 2 )]
+position = Vector2( 533, 183 )
+team = "player"

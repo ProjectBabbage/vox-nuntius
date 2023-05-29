@@ -37,6 +37,7 @@ func pickMessage(message):
 	message.queue_free()
 
 func _on_CombatArea2D_area_entered(area:Area2D):
+	print("area collided ", area)
 	var parent = area.get_parent()
 	if parent is Unit or parent is Building:
 		if parent.team != team:
