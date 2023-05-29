@@ -82,7 +82,7 @@ position = Vector2( -1253, 577 )
 team = "player"
 
 [node name="TownCenterAI" parent="." instance=ExtResource( 10 )]
-position = Vector2( -1024, 267 )
+position = Vector2( 1245, -635 )
 team = "ai"
 
 [node name="Camera2D" type="Camera2D" parent="."]
