@@ -11,7 +11,9 @@ var attack_dmg: int = 2
 var attack_timer: Timer
 
 func attack():
-	for unit in units_to_attack:
+	var size = units_to_attack.size()
+	if size != 0:
+		var unit = units_to_attack[rand_range(0, size)]
 		get_node("AttackAnimation").play("attack")
 		unit.lose_health(attack_dmg)
 
