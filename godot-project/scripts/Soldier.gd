@@ -11,6 +11,8 @@ func _ready():
 	var parent_towncenter: TownCenter = get_parent()
 	assert(parent_towncenter is TownCenter, "Soldier is supposed to be spawned as a child of a TownCenter")
 	team = parent_towncenter.team
+	if team == "ai":
+		$SpriteSoldier.flip_h = true
 	attack_dmg = 6
 	timer.start(1)
 
