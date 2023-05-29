@@ -4,10 +4,10 @@
 [ext_resource path="res://resources/Theme.tres" type="Theme" id=2]
 [ext_resource path="res://scenes/UnitPanel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/fonts/Z003-MediumItalic.otf" type="DynamicFontData" id=4]
-[ext_resource path="res://assets/Buildings/I_Dungeon.png" type="Texture" id=5]
+[ext_resource path="res://assets/Textures/Brick/Brick_03-128x128.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
-size = 65
+size = 40
 font_data = ExtResource( 4 )
 
 [node name="HUD" type="CanvasLayer"]
@@ -23,23 +23,24 @@ margin_top = -155.0
 margin_right = 0.0
 margin_bottom = 176.0
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="NuntiusInfoContainer" type="MarginContainer" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -63.0
-margin_right = 80.0
-margin_bottom = 102.0
+margin_right = 62.0
+margin_bottom = 65.0
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
-margin_right = 143.0
-margin_bottom = 102.0
+[node name="TextureRect" type="TextureRect" parent="NuntiusInfoContainer"]
+margin_right = 125.0
+margin_bottom = 65.0
 texture = ExtResource( 5 )
 expand = true
 
-[node name="Label" type="Label" parent="MarginContainer"]
-margin_top = 18.0
-margin_right = 143.0
-margin_bottom = 83.0
+[node name="NuntiusLabel" type="Label" parent="NuntiusInfoContainer"]
+unique_name_in_owner = true
+margin_top = 12.0
+margin_right = 125.0
+margin_bottom = 53.0
 theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0.105882, 0.0901961, 0.0901961, 1 )
 custom_fonts/font = SubResource( 1 )

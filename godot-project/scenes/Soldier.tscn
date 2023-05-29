@@ -14,7 +14,7 @@ radius = 91.6624
 resource_name = "attack"
 length = 1.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:position")
+tracks/0/path = NodePath("SpriteSoldier:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -26,7 +26,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 5, 2 ), Vector2( 10, 2 ), Vector2( -20, 0 ), Vector2( 20, 0 ), Vector2( 0, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/path = NodePath("SpriteSoldier:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -55,7 +55,7 @@ collision_layer = 8
 collision_mask = 24
 script = ExtResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="SpriteSoldier" type="Sprite" parent="."]
 scale = Vector2( 0.432692, 0.432692 )
 texture = ExtResource( 2 )
 

@@ -7,7 +7,6 @@ onready var game: Game = get_tree().root.get_node("Game")
 
 func _ready():
 	$UnitPointsLabel.text = str(game.players[game.my_player_id]["unit_points"]) + " unit points"
-	pass
 
 func _on_BuySoldierButton_pressed():
 	rpc("spawn_soldier")
