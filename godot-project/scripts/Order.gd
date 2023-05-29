@@ -1,7 +1,6 @@
 class_name Order
 
 var order
-
 var points: PoolVector2Array
 
 

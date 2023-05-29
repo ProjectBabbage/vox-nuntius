@@ -5,6 +5,7 @@ const MAX_PLAYERS = 2
 
 var game: Game
 
+
 func _ready():
 	$IP_LIST.text = get_ips().join("\n")
 	game = get_parent()
@@ -47,10 +48,12 @@ func _on_Client_pressed():
 	get_tree().connect("network_peer_connected", self, "_player_connected")
 	visible = false
 
+
 func _on_Server_pressed():
 	create_server()
 	get_tree().connect("network_peer_connected", self, "_player_connected")
 	visible = false
+
 
 func _player_connected(id):
 	rpc_id(id, "register")

@@ -1,12 +1,11 @@
 extends Area2D
 class_name Map
 
-var isWritingPath := false
-var currentLine: Line2D
-
-const Order = preload("res://scripts/Order.gd")
 var messengerScene = preload("res://scenes/Messenger.tscn")
 var game 
+var currentLine: Line2D
+var isWritingPath := false
+
 
 func _process(_delta):
 	if isWritingPath:
@@ -23,7 +22,6 @@ func _on_Area2D_input_event(_viewport: Node, event: InputEvent, _shape_idx: int)
 		elif isWritingPath:
 			isWritingPath = false
 			currentLine.add_point(get_global_mouse_position())
-			var end_position = get_global_mouse_position()
 			var order = Order.new(currentLine.points)
 			rpc("send_messenger", order.toDict())
 			currentLine.queue_free()

@@ -1,7 +1,7 @@
 extends Control
 
 # import instance of solider
-var Soldier = preload("res://scenes/Soldier.tscn")
+var soldierScene = preload("res://scenes/Soldier.tscn")
 
 onready var game: Game = get_tree().root.get_node("Game")
 
@@ -16,7 +16,7 @@ remotesync func spawn_soldier():
 	if game.players[player_id]["unit_points"] >= 100:
 		var map = game.map
 		game.players[player_id]["unit_points"] -= 100
-		var newSoldier = Soldier.instance()
+		var newSoldier = soldierScene.instance()
 		var town_center: TownCenter = map.get_node(game.players[player_id]["town_center"])
 		newSoldier.position = Vector2(rand_range(-100, 100), rand_range(-100, 100))
 		town_center.add_child(newSoldier)

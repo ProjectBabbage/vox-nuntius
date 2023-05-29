@@ -2,10 +2,8 @@ extends KinematicBody2D
 class_name Unit
 
 export(String, "player", "ai") var team
-
 var health: Health = Health.new(100)
 var units_to_attack = []
-
 ## Attacking
 var attack_dmg: int = 2
 var attack_timer: Timer

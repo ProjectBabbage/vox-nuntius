@@ -1,11 +1,11 @@
 extends Node2D
 class_name Game
 
+export var mapScene: PackedScene
 var my_player_id: int
 var players = {}
 var role: String
 var map: Map
-export var mapScene: PackedScene
 
 
 func _ready():
@@ -16,7 +16,6 @@ func switch_to_game():
 	map = mapScene.instance()
 	map.game = self
 	add_child(map)
-
 
 
 func init_player_1(id):
