@@ -11,9 +11,15 @@ var attack_timer: Timer
 func attack():
 	var size = units_to_attack.size()
 	if size != 0:
-		var unit = units_to_attack[rand_range(0, size)]
+		var target = units_to_attack[0]
+		var minimum = units_to_attack[0].health.max_health
+		for unit in units_to_attack:
+			if unit.health.current_health < minimum:
+				minimum = unit.health.current_health
+				target = unit		
+
 		get_node("AttackAnimation").play("attack")
-		unit.lose_health(attack_dmg)
+		target.lose_health(attack_dmg)
 
 func lose_health(amount: int):
 	health.current_health -= amount
