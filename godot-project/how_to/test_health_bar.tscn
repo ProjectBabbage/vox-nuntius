@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/TownCenter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/HealthBar.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scripts/HealthBar.gd" type="Script" id=3]
 
 [node name="Node2D" type="Node2D"]
 
@@ -11,7 +10,6 @@ position = Vector2( 142, 133 )
 team = "ai"
 
 [node name="LifeBar" parent="TownCenterAI" instance=ExtResource( 2 )]
-script = ExtResource( 3 )
 
 [node name="TownCenterPlayer" parent="." instance=ExtResource( 1 )]
 position = Vector2( 705, 132 )

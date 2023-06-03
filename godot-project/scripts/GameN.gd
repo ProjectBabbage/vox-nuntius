@@ -1,15 +1,15 @@
 extends Node2D
-class_name Game
+class_name GameN
 
 export var mapScene: PackedScene
 var my_player_id: int
 var players = {}
 var role: String
-var map: Map
+var map: MapN
 
 
 func _ready():
-	add_child(load("res://scenes/Lobby.tscn").instance())
+	add_child(load("res://scenes/LobbyN.tscn").instance())
 
 
 func switch_to_game():

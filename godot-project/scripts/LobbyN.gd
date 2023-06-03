@@ -3,7 +3,7 @@ extends Control
 const SERVER_PORT = 12345
 const MAX_PLAYERS = 2
 
-var game: Game
+var game: GameN
 
 
 func _ready():

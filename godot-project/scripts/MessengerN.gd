@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export var movement_speed: float = 200
 export var messageScene: PackedScene
-onready var game = get_tree().root.get_node("Game")
+onready var game = get_tree().root.get_node("GameN")
 var order: Order
 
 
@@ -12,7 +12,8 @@ func _physics_process(delta):
 			var message = messageScene.instance()
 			message.position = order.points[0]
 			message.set_order(order)
-			get_tree().get_root().add_child(message)
+			var map = get_tree().root.get_node("GameN").get_node("MapN")
+			map.add_child(message)
 			var player_id = get_tree().get_network_unique_id()
 			game.players[player_id]["available_nuntius"] +=1
 			queue_free()

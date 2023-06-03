@@ -1,6 +1,6 @@
 extends MarginContainer
 
-onready var game: Game = get_tree().root.get_node("Game")
+onready var game: GameN = get_tree().root.get_node("GameN")
 
 
 func _process(_delta):

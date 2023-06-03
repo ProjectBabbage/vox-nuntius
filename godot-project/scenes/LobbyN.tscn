@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://scripts/Lobby.gd" type="Script" id=1]
+[ext_resource path="res://scripts/LobbyN.gd" type="Script" id=1]
 
 [node name="Control" type="Control"]
 margin_right = 1024.0

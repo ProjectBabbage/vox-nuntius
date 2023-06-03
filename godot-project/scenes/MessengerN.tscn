@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/IconPack/Backpack1.png" type="Texture" id=1]
-[ext_resource path="res://scripts/Messenger.gd" type="Script" id=2]
+[ext_resource path="res://scripts/MessengerN.gd" type="Script" id=2]
 [ext_resource path="res://scenes/Message.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 31.0644
 
-[node name="Messenger" type="KinematicBody2D"]
+[node name="MessengerN" type="KinematicBody2D"]
 collision_layer = 2
 collision_mask = 16
 script = ExtResource( 2 )

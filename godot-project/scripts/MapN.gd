@@ -1,7 +1,7 @@
 extends Area2D
-class_name Map
+class_name MapN
 
-var messengerScene = preload("res://scenes/Messenger.tscn")
+var messengerScene = preload("res://scenes/MessengerN.tscn")
 var game 
 var currentLine: Line2D
 var isWritingPath := false

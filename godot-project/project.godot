@@ -15,9 +15,9 @@ _global_script_classes=[ {
 "path": "res://scripts/Building.gd"
 }, {
 "base": "Node2D",
-"class": "Game",
+"class": "GameN",
 "language": "GDScript",
-"path": "res://scripts/Game.gd"
+"path": "res://scripts/GameN.gd"
 }, {
 "base": "Reference",
 "class": "Health",
@@ -30,9 +30,9 @@ _global_script_classes=[ {
 "path": "res://how_to/use_rust_scripts/hello_scene.gdns"
 }, {
 "base": "Area2D",
-"class": "Map",
+"class": "MapN",
 "language": "GDScript",
-"path": "res://scripts/Map.gd"
+"path": "res://scripts/MapN.gd"
 }, {
 "base": "Area2D",
 "class": "Message",
@@ -61,10 +61,10 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Building": "",
-"Game": "",
+"GameN": "",
 "Health": "",
 "HelloWorld": "",
-"Map": "",
+"MapN": "",
 "Message": "",
 "Order": "",
 "Soldier": "res://assets/IconPack/Spear.png",
@@ -75,7 +75,7 @@ _global_script_class_icons={
 [application]
 
 config/name="vox nuntius"
-run/main_scene="res://scenes/Game.tscn"
+run/main_scene="res://scenes/GameN.tscn"
 config/icon="res://assets/scroll.png"
 
 [debug]

@@ -3,7 +3,7 @@ extends Control
 # import instance of solider
 var soldierScene = preload("res://scenes/Soldier.tscn")
 
-onready var game: Game = get_tree().root.get_node("Game")
+onready var game: GameN = get_tree().root.get_node("GameN")
 
 func _ready():
 	$UnitPointsLabel.text = str(game.players[game.my_player_id]["unit_points"]) + " unit points"
